@@ -10,6 +10,7 @@ pipeline {
         stage('terraform init') {
             steps{
                 echo 'terraform init'
+                PATH=/usr/local/bin/terraform
                 sh 'terraform init'
                 echo 'init done'
             }
@@ -17,6 +18,7 @@ pipeline {
         stage('terraform plan') {
             steps{
                 echo 'terraform plan'
+                PATH=/usr/local/bin/terraform
                 sh 'terraform plan'
                 echo 'planned finished'
             }
