@@ -1,12 +1,15 @@
 pipeline {
     agent any
-    environment {
-    PATH = "/usr/local/bin/terraform:$PATH"
-    }
     stages {
         stage('Build') {
             steps {
                 echo 'starting the process..'
+            }
+        }
+        stage('par') {
+            steps{
+                echo '$PATH'
+
             }
         }
         stage('terraform init') {
