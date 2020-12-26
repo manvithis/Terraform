@@ -6,7 +6,6 @@ pipeline {
                 echo 'starting the process..'
             }
         }
-\
         stage('terraform init') {
             steps{
                 echo 'terraform init'
