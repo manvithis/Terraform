@@ -8,7 +8,7 @@ pipeline {
         }
         stage('par') {
             steps{
-                echo '$PATH'
+                echo $PATH
 
             }
         }
