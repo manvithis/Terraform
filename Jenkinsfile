@@ -8,7 +8,7 @@ pipeline {
         }
         stage('terraform init') {
             steps{
-                echo 'terraform init'
+                echo 'terraform init -from-module=/var/lib/jenkins/workspace/Prod_server_main/'
                 sh 'terraform init'
                 echo 'init done'
             }
