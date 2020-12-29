@@ -8,10 +8,10 @@ resource "aws_default_vpc" "default" {
   }
 }
 resource "aws_default_subnet" "default_az1" {
-  availability_zone = "us-west-2a"
+  availability_zone = "us-east-1a"
 
   tags = {
-    Name = "Default subnet for us-west-2a"
+    Name = "Default subnet for us-east-1a"
   }
 }
 
