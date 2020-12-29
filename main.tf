@@ -8,3 +8,4 @@ resource "aws_instance" "chintu" {
   tags = {
     Name = "ubuntu"
   }
+ }
