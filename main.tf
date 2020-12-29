@@ -1,12 +1,10 @@
 provider "aws" {
-  region = "eu-east-1"
+  region  = "us-west-1"
 }
-
-resource "aws_instance" "web" {
-  ami           = var.ami
-  instance_type = var.instance_type
+resource "aws_instance" "chintu" {
+  ami           = "ami-03ba3948f6c37a4b0"
+  instance_type = "t2.micro"
 
   tags = {
-    Name = var.tags
+    Name = "ubuntu"
   }
-}
