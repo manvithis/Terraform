@@ -12,6 +12,6 @@ pipeline {
             steps  {
                 sh 'terrafrom plan'
             }
-                
+        }           
     }
 }
