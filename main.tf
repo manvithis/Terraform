@@ -1,21 +1,21 @@
-terraform {
-  required_version = ">= 0.12, < 0.13"
-}
+
 provider "aws" {
   region = "us-east-1"
 }
-resource "aws_default_vpc" "default" {
+module "ec2_cluster"
+{
+  source                 = "terraform-aws-modules/ec2-instance/aws"
+  version                = "~> 2.0"
+
+  name                   = "my-cluster"
+  instance_count         = 2
+
+  ami                    = "ami-0885b1f6bd170450c"
+  instance_type          = "t2.micro" 
+  vpc_security_group_ids = ["sg-05e6e9763dad8b4e5"]
+  subnet_id              = "subnet-05be647f5bfeea5eb"
+
   tags = {
-    Name = "Default VPC"
-  }
-}
-
-
-resource "aws_instance" "web" {
-  ami           = "ami-0be2609ba883822ec"
-  instance_type = "t2.small"
-  
-   tags = {
-    Name = "HelloWorld"
+    Terraform   = "true"
   }
 }
