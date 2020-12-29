@@ -4,9 +4,11 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 }
-data "aws_subnet_ids" "private" {
-  vpc_id = "vpc-0c1ca6a9599bb1b14"
- }
+resource "aws_default_vpc" "default" {
+  tags = {
+    Name = "Default VPC"
+  }
+}
 
 
 resource "aws_instance" "web" {
