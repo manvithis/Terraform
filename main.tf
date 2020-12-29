@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "chintu" {
-  ami           = "ami-03ba3948f6c37a4b0"
+  ami           = "ami-0be2609ba883822ec"
   instance_type = "t2.micro"
 
   tags = {
